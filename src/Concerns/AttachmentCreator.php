@@ -37,7 +37,7 @@ trait AttachmentCreator
      */
     public function storeFile(UploadedFile $file, string $disk)
     {
-        return $file->storeAs('/', Str::uuid(), [
+        return $file->storeAs('/', Str::uuid().'.'.$file->getClientOriginalExtension(), [
             'disk' => $disk
         ]);
     }
